@@ -11,3 +11,9 @@ two:
   model: MyString
   vin: 1
   part: two
+
+my_car:
+  make:  Audi
+  model: Q5
+  vin:   123
+  parts:  wheel

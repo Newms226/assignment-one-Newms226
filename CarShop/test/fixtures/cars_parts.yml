@@ -7,3 +7,7 @@ one:
 two:
   car: two
   part: two
+
+audi_to_wheel:
+  car: Audi
+  part: wheel

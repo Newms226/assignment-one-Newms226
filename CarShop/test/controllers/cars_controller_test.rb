@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CarsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @car = cars(:one)
+    @car = cars(:my_car)
   end
 
   test "should get index" do
