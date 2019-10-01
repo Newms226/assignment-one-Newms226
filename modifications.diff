@@ -1,7 +1,5 @@
-diff --git a/.DS_Store b/.DS_Store
-deleted file mode 100644
-index b338ca9..0000000
-Binary files a/.DS_Store and /dev/null differ
+
+
 diff --git a/.travis.yml b/.travis.yml
 deleted file mode 100644
 index e58a505..0000000
@@ -17,10 +15,7 @@ index e58a505..0000000
 -script:
 -  - bundle exec rails test
 -
-diff --git a/CarShop/.DS_Store b/CarShop/.DS_Store
-deleted file mode 100644
-index 5008ddf..0000000
-Binary files a/CarShop/.DS_Store and /dev/null differ
+
 diff --git a/CarShop/.ruby-version b/CarShop/.ruby-version
 index aedc15b..fb92407 100644
 --- a/CarShop/.ruby-version
@@ -29,6 +24,8 @@ index aedc15b..fb92407 100644
 -2.5.3
 +ruby-2.3.7
 \ No newline at end of file
+
+
 diff --git a/CarShop/Gemfile b/CarShop/Gemfile
 index 19ae71f..db6877b 100644
 --- a/CarShop/Gemfile
@@ -36,26 +33,30 @@ index 19ae71f..db6877b 100644
 @@ -1,7 +1,7 @@
  source 'https://rubygems.org'
  git_source(:github) { |repo| "https://github.com/#{repo}.git" }
- 
+
 -ruby '2.5.3'
 +ruby '2.3.7'
- 
+
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '~> 5.2.3'
+
+
 diff --git a/CarShop/Gemfile.lock b/CarShop/Gemfile.lock
 index 5c98fb1..4ad9c4e 100644
 --- a/CarShop/Gemfile.lock
 +++ b/CarShop/Gemfile.lock
 @@ -212,7 +212,7 @@ DEPENDENCIES
    web-console (>= 3.3.0)
- 
+
  RUBY VERSION
 -   ruby 2.5.3p105
 +   ruby 2.3.7p456
- 
+
  BUNDLED WITH
 -   2.0.2
 +   1.17.3
+
+
 diff --git a/CarShop/app/assets/javascripts/cars.coffee b/CarShop/app/assets/javascripts/cars.coffee
 deleted file mode 100644
 index 24f83d1..0000000
@@ -65,6 +66,7 @@ index 24f83d1..0000000
 -# Place all the behaviors and hooks related to the matching controller here.
 -# All this logic will automatically be available in application.js.
 -# You can use CoffeeScript in this file: http://coffeescript.org/
+
 diff --git a/CarShop/app/assets/javascripts/makes.coffee b/CarShop/app/assets/javascripts/makes.coffee
 deleted file mode 100644
 index 24f83d1..0000000
@@ -74,6 +76,8 @@ index 24f83d1..0000000
 -# Place all the behaviors and hooks related to the matching controller here.
 -# All this logic will automatically be available in application.js.
 -# You can use CoffeeScript in this file: http://coffeescript.org/
+
+
 diff --git a/CarShop/app/assets/javascripts/parts.coffee b/CarShop/app/assets/javascripts/parts.coffee
 deleted file mode 100644
 index 24f83d1..0000000
@@ -83,6 +87,8 @@ index 24f83d1..0000000
 -# Place all the behaviors and hooks related to the matching controller here.
 -# All this logic will automatically be available in application.js.
 -# You can use CoffeeScript in this file: http://coffeescript.org/
+
+
 diff --git a/CarShop/app/assets/stylesheets/cars.scss b/CarShop/app/assets/stylesheets/cars.scss
 deleted file mode 100644
 index 76d7612..0000000
@@ -92,6 +98,8 @@ index 76d7612..0000000
 -// Place all the styles related to the Cars controller here.
 -// They will automatically be included in application.css.
 -// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 diff --git a/CarShop/app/assets/stylesheets/makes.scss b/CarShop/app/assets/stylesheets/makes.scss
 deleted file mode 100644
 index cd0c81a..0000000
@@ -101,6 +109,8 @@ index cd0c81a..0000000
 -// Place all the styles related to the Makes controller here.
 -// They will automatically be included in application.css.
 -// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 diff --git a/CarShop/app/assets/stylesheets/parts.scss b/CarShop/app/assets/stylesheets/parts.scss
 deleted file mode 100644
 index 42a59a5..0000000

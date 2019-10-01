@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  car: one
-  part: one
+  car_id: one
+  part_id: one
 
 two:
-  car: two
-  part: two
+  car_id: two
+  part_id: two
 
 audi_to_wheel:
-  car: Audi
-  part: wheel
+  car_id: Audi
+  part_id: wheel
