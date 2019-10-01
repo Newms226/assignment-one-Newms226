@@ -32,3 +32,11 @@
 <br>
 
 <%= link_to 'New Car', new_car_path %>
+<br/><br/>
+<%= form_tag(search_cars_url, method: "get") do %>
+  <%= label_tag(:search, "Search by Car Vin:") %>
+  <%= text_field_tag :search, params[:search],
+                     data: { autocomplete: autocomplete_car_vin_cars_path } %>
+  <%= submit_tag("Search") %>
+
+<% end %>
