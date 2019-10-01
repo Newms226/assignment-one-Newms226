@@ -16,4 +16,4 @@ my_car:
   make:  Audi
   model: Q5
   vin:   123
-  part_id:  wheel
+  part_id: wheel
