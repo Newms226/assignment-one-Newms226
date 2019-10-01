@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
-  # autocomplete :car, :vin, full_search: true
+  autocomplete :car, :vin, full_search: true
 
   # GET /cars
   # GET /cars.json

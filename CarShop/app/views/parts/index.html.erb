@@ -27,7 +27,7 @@
 <%= link_to 'New Part', new_part_path %>
 <br/><br/>
 <%= form_tag(search_parts_url, method: "get") do %>
-  <%= label_tag(:search, "Search by Part Name:") %>
+  <%= label_tag(:search, "Search by part name:") %>
   <%= text_field_tag :search, params[:search],
                      data: { autocomplete: autocomplete_part_name_parts_path } %>
   <%= submit_tag("Search") %>
