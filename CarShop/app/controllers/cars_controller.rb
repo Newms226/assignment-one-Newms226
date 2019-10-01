@@ -1,6 +1,8 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
+  # autocomplete :car, :vin, full_search: true
+
   # GET /cars
   # GET /cars.json
   def index
@@ -67,11 +69,9 @@ class CarsController < ApplicationController
 
   # GET /cars/search
   def search
-    @cars = Car.where("name like ?", "%#{params[:query]}%")
+    @cars = Car.where("vin like ?", "%#{params[:query]}%")
     render :index
   end
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

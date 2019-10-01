@@ -27,8 +27,16 @@
 <br>
 
 <%= link_to 'New Make', new_make_path %>
+<br/><br/>
+<%= form_tag(search_makes_url, method: "get") do %>
+  <%= label_tag(:search, "Search by make name:") %>
+  <%= text_field_tag :search, params[:search],
+        data: { autocomplete: autocomplete_make_name_makes_path } %>    
+  <%= submit_tag("Search") %>
 
-<br>
-<br>
-<%= link_to 'Parts', parts_path %>
-<%= link_to 'Cars', cars_path %>
+<% end %>
+<%#= form_tag(search_makes_url, method: "get") do %>
+  <%#= label_tag(:search_by_country, "Search by country:") %>
+  <%#= text_field_tag :search_by_country, params[:search_by_country],data: { autocomplete: autocomplete_make_country_makes_path } %>
+  <%#= submit_tag("Search") %>
+<%# end %>

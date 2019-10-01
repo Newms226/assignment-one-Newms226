@@ -1,12 +1,26 @@
 Rails.application.routes.draw do
-  resources :makes
+  resources :makes do
+    get :autocomplete_make_name, on: :collection
+    # get :autocomplete_make_country, on: :collection
+    
+    collection do
+      get 'search'
+    end
+  end
+
+
   resources :parts
 
   resources :cars do
     collection do
       get 'search'
     end
+
+    # get :autocomplete_car_vin, on: :collection
+
   end
+
+
 
   # resources :cars do
   #   resources :parts

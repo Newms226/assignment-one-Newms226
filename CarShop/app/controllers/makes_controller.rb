@@ -1,6 +1,9 @@
 class MakesController < ApplicationController
   before_action :set_make, only: [:show, :edit, :update, :destroy]
 
+  autocomplete :make, :name, full_search: true
+
+
   # GET /makes
   # GET /makes.json
   def index
@@ -60,6 +63,17 @@ class MakesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def search
+    @makes = Make.where("name like ?", "%#{params[:search]}%")
+    render :index
+  end
+
+  # def search_by_country
+  #   @makes = Make.where("country like ?", "%#{params[:search]}%")
+  #   render :index
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
