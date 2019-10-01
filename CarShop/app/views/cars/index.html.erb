@@ -36,3 +36,11 @@
 <br><br>
 <%= link_to 'Makes', makes_path %>
 <%= link_to 'Parts', parts_path %>
+
+<br><br>
+
+<%= form_tag(search_cars_url, method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+<% end %>
