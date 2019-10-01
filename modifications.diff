@@ -1,0 +1,1494 @@
+diff --git a/.DS_Store b/.DS_Store
+deleted file mode 100644
+index b338ca9..0000000
+Binary files a/.DS_Store and /dev/null differ
+diff --git a/.travis.yml b/.travis.yml
+deleted file mode 100644
+index e58a505..0000000
+--- a/.travis.yml
++++ /dev/null
+@@ -1,9 +0,0 @@
+-language: ruby
+-rvm:
+-  - 2.5.3
+-before_install:
+-  - cd CarShop
+-  - gem install bundler -v 2.0.2
+-script:
+-  - bundle exec rails test
+-
+diff --git a/CarShop/.DS_Store b/CarShop/.DS_Store
+deleted file mode 100644
+index 5008ddf..0000000
+Binary files a/CarShop/.DS_Store and /dev/null differ
+diff --git a/CarShop/.ruby-version b/CarShop/.ruby-version
+index aedc15b..fb92407 100644
+--- a/CarShop/.ruby-version
++++ b/CarShop/.ruby-version
+@@ -1 +1 @@
+-2.5.3
++ruby-2.3.7
+\ No newline at end of file
+diff --git a/CarShop/Gemfile b/CarShop/Gemfile
+index 19ae71f..db6877b 100644
+--- a/CarShop/Gemfile
++++ b/CarShop/Gemfile
+@@ -1,7 +1,7 @@
+ source 'https://rubygems.org'
+ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+ 
+-ruby '2.5.3'
++ruby '2.3.7'
+ 
+ # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ gem 'rails', '~> 5.2.3'
+diff --git a/CarShop/Gemfile.lock b/CarShop/Gemfile.lock
+index 5c98fb1..4ad9c4e 100644
+--- a/CarShop/Gemfile.lock
++++ b/CarShop/Gemfile.lock
+@@ -212,7 +212,7 @@ DEPENDENCIES
+   web-console (>= 3.3.0)
+ 
+ RUBY VERSION
+-   ruby 2.5.3p105
++   ruby 2.3.7p456
+ 
+ BUNDLED WITH
+-   2.0.2
++   1.17.3
+diff --git a/CarShop/app/assets/javascripts/cars.coffee b/CarShop/app/assets/javascripts/cars.coffee
+deleted file mode 100644
+index 24f83d1..0000000
+--- a/CarShop/app/assets/javascripts/cars.coffee
++++ /dev/null
+@@ -1,3 +0,0 @@
+-# Place all the behaviors and hooks related to the matching controller here.
+-# All this logic will automatically be available in application.js.
+-# You can use CoffeeScript in this file: http://coffeescript.org/
+diff --git a/CarShop/app/assets/javascripts/makes.coffee b/CarShop/app/assets/javascripts/makes.coffee
+deleted file mode 100644
+index 24f83d1..0000000
+--- a/CarShop/app/assets/javascripts/makes.coffee
++++ /dev/null
+@@ -1,3 +0,0 @@
+-# Place all the behaviors and hooks related to the matching controller here.
+-# All this logic will automatically be available in application.js.
+-# You can use CoffeeScript in this file: http://coffeescript.org/
+diff --git a/CarShop/app/assets/javascripts/parts.coffee b/CarShop/app/assets/javascripts/parts.coffee
+deleted file mode 100644
+index 24f83d1..0000000
+--- a/CarShop/app/assets/javascripts/parts.coffee
++++ /dev/null
+@@ -1,3 +0,0 @@
+-# Place all the behaviors and hooks related to the matching controller here.
+-# All this logic will automatically be available in application.js.
+-# You can use CoffeeScript in this file: http://coffeescript.org/
+diff --git a/CarShop/app/assets/stylesheets/cars.scss b/CarShop/app/assets/stylesheets/cars.scss
+deleted file mode 100644
+index 76d7612..0000000
+--- a/CarShop/app/assets/stylesheets/cars.scss
++++ /dev/null
+@@ -1,3 +0,0 @@
+-// Place all the styles related to the Cars controller here.
+-// They will automatically be included in application.css.
+-// You can use Sass (SCSS) here: http://sass-lang.com/
+diff --git a/CarShop/app/assets/stylesheets/makes.scss b/CarShop/app/assets/stylesheets/makes.scss
+deleted file mode 100644
+index cd0c81a..0000000
+--- a/CarShop/app/assets/stylesheets/makes.scss
++++ /dev/null
+@@ -1,3 +0,0 @@
+-// Place all the styles related to the Makes controller here.
+-// They will automatically be included in application.css.
+-// You can use Sass (SCSS) here: http://sass-lang.com/
+diff --git a/CarShop/app/assets/stylesheets/parts.scss b/CarShop/app/assets/stylesheets/parts.scss
+deleted file mode 100644
+index 42a59a5..0000000
+--- a/CarShop/app/assets/stylesheets/parts.scss
++++ /dev/null
+@@ -1,3 +0,0 @@
+-// Place all the styles related to the Parts controller here.
+-// They will automatically be included in application.css.
+-// You can use Sass (SCSS) here: http://sass-lang.com/
+diff --git a/CarShop/app/assets/stylesheets/scaffolds.scss b/CarShop/app/assets/stylesheets/scaffolds.scss
+deleted file mode 100644
+index 6045188..0000000
+--- a/CarShop/app/assets/stylesheets/scaffolds.scss
++++ /dev/null
+@@ -1,84 +0,0 @@
+-body {
+-  background-color: #fff;
+-  color: #333;
+-  margin: 33px;
+-  font-family: verdana, arial, helvetica, sans-serif;
+-  font-size: 13px;
+-  line-height: 18px;
+-}
+-
+-p, ol, ul, td {
+-  font-family: verdana, arial, helvetica, sans-serif;
+-  font-size: 13px;
+-  line-height: 18px;
+-}
+-
+-pre {
+-  background-color: #eee;
+-  padding: 10px;
+-  font-size: 11px;
+-}
+-
+-a {
+-  color: #000;
+-
+-  &:visited {
+-    color: #666;
+-  }
+-
+-  &:hover {
+-    color: #fff;
+-    background-color: #000;
+-  }
+-}
+-
+-th {
+-  padding-bottom: 5px;
+-}
+-
+-td {
+-  padding: 0 5px 7px;
+-}
+-
+-div {
+-  &.field, &.actions {
+-    margin-bottom: 10px;
+-  }
+-}
+-
+-#notice {
+-  color: green;
+-}
+-
+-.field_with_errors {
+-  padding: 2px;
+-  background-color: red;
+-  display: table;
+-}
+-
+-#error_explanation {
+-  width: 450px;
+-  border: 2px solid red;
+-  padding: 7px 7px 0;
+-  margin-bottom: 20px;
+-  background-color: #f0f0f0;
+-
+-  h2 {
+-    text-align: left;
+-    font-weight: bold;
+-    padding: 5px 5px 5px 15px;
+-    font-size: 12px;
+-    margin: -7px -7px 0;
+-    background-color: #c00;
+-    color: #fff;
+-  }
+-
+-  ul li {
+-    font-size: 12px;
+-    list-style: square;
+-  }
+-}
+-
+-label {
+-  display: block;
+-}
+diff --git a/CarShop/app/controllers/cars_controller.rb b/CarShop/app/controllers/cars_controller.rb
+deleted file mode 100644
+index 26ca18a..0000000
+--- a/CarShop/app/controllers/cars_controller.rb
++++ /dev/null
+@@ -1,78 +0,0 @@
+-class CarsController < ApplicationController
+-  before_action :set_car, only: [:show, :edit, :update, :destroy]
+-
+-  # GET /cars
+-  # GET /cars.json
+-  def index
+-    @cars = Car.all
+-  end
+-
+-  # GET /cars/1
+-  # GET /cars/1.json
+-  def show
+-  end
+-
+-  # GET /cars/new
+-  def new
+-    @car = Car.new
+-    @parts = Part.all
+-    @makes = Make.all
+-  end
+-
+-  # GET /cars/1/edit
+-  def edit
+-    @parts = Part.all
+-    @makes = Make.all
+-  end
+-
+-  # POST /cars
+-  # POST /cars.json
+-  def create
+-    @car = Car.new(car_params)
+-
+-    respond_to do |format|
+-      if @car.save
+-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+-        format.json { render :show, status: :created, location: @car }
+-      else
+-        format.html { render :new }
+-        format.json { render json: @car.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # PATCH/PUT /cars/1
+-  # PATCH/PUT /cars/1.json
+-  def update
+-    respond_to do |format|
+-      if @car.update(car_params)
+-        format.html { redirect_to @car, notice: 'Car was successfully updated.' }
+-        format.json { render :show, status: :ok, location: @car }
+-      else
+-        format.html { render :edit }
+-        format.json { render json: @car.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # DELETE /cars/1
+-  # DELETE /cars/1.json
+-  def destroy
+-    @car.destroy
+-    respond_to do |format|
+-      format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
+-      format.json { head :no_content }
+-    end
+-  end
+-
+-  private
+-    # Use callbacks to share common setup or constraints between actions.
+-    def set_car
+-      @car = Car.find(params[:id])
+-    end
+-
+-    # Never trust parameters from the scary internet, only allow the white list through.
+-    def car_params
+-      params.require(:car).permit(:make_id, :model, :vin, :part_ids => [])
+-    end
+-end
+diff --git a/CarShop/app/controllers/makes_controller.rb b/CarShop/app/controllers/makes_controller.rb
+deleted file mode 100644
+index 19460d9..0000000
+--- a/CarShop/app/controllers/makes_controller.rb
++++ /dev/null
+@@ -1,74 +0,0 @@
+-class MakesController < ApplicationController
+-  before_action :set_make, only: [:show, :edit, :update, :destroy]
+-
+-  # GET /makes
+-  # GET /makes.json
+-  def index
+-    @makes = Make.all
+-  end
+-
+-  # GET /makes/1
+-  # GET /makes/1.json
+-  def show
+-  end
+-
+-  # GET /makes/new
+-  def new
+-    @make = Make.new
+-  end
+-
+-  # GET /makes/1/edit
+-  def edit
+-  end
+-
+-  # POST /makes
+-  # POST /makes.json
+-  def create
+-    @make = Make.new(make_params)
+-
+-    respond_to do |format|
+-      if @make.save
+-        format.html { redirect_to @make, notice: 'Make was successfully created.' }
+-        format.json { render :show, status: :created, location: @make }
+-      else
+-        format.html { render :new }
+-        format.json { render json: @make.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # PATCH/PUT /makes/1
+-  # PATCH/PUT /makes/1.json
+-  def update
+-    respond_to do |format|
+-      if @make.update(make_params)
+-        format.html { redirect_to @make, notice: 'Make was successfully updated.' }
+-        format.json { render :show, status: :ok, location: @make }
+-      else
+-        format.html { render :edit }
+-        format.json { render json: @make.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # DELETE /makes/1
+-  # DELETE /makes/1.json
+-  def destroy
+-    @make.destroy
+-    respond_to do |format|
+-      format.html { redirect_to makes_url, notice: 'Make was successfully destroyed.' }
+-      format.json { head :no_content }
+-    end
+-  end
+-
+-  private
+-    # Use callbacks to share common setup or constraints between actions.
+-    def set_make
+-      @make = Make.find(params[:id])
+-    end
+-
+-    # Never trust parameters from the scary internet, only allow the white list through.
+-    def make_params
+-      params.require(:make).permit(:name, :country)
+-    end
+-end
+diff --git a/CarShop/app/controllers/parts_controller.rb b/CarShop/app/controllers/parts_controller.rb
+deleted file mode 100644
+index 2e52866..0000000
+--- a/CarShop/app/controllers/parts_controller.rb
++++ /dev/null
+@@ -1,74 +0,0 @@
+-class PartsController < ApplicationController
+-  before_action :set_part, only: [:show, :edit, :update, :destroy]
+-
+-  # GET /parts
+-  # GET /parts.json
+-  def index
+-    @parts = Part.all
+-  end
+-
+-  # GET /parts/1
+-  # GET /parts/1.json
+-  def show
+-  end
+-
+-  # GET /parts/new
+-  def new
+-    @part = Part.new
+-  end
+-
+-  # GET /parts/1/edit
+-  def edit
+-  end
+-
+-  # POST /parts
+-  # POST /parts.json
+-  def create
+-    @part = Part.new(part_params)
+-
+-    respond_to do |format|
+-      if @part.save
+-        format.html { redirect_to @part, notice: 'Part was successfully created.' }
+-        format.json { render :show, status: :created, location: @part }
+-      else
+-        format.html { render :new }
+-        format.json { render json: @part.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # PATCH/PUT /parts/1
+-  # PATCH/PUT /parts/1.json
+-  def update
+-    respond_to do |format|
+-      if @part.update(part_params)
+-        format.html { redirect_to @part, notice: 'Part was successfully updated.' }
+-        format.json { render :show, status: :ok, location: @part }
+-      else
+-        format.html { render :edit }
+-        format.json { render json: @part.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # DELETE /parts/1
+-  # DELETE /parts/1.json
+-  def destroy
+-    @part.destroy
+-    respond_to do |format|
+-      format.html { redirect_to parts_url, notice: 'Part was successfully destroyed.' }
+-      format.json { head :no_content }
+-    end
+-  end
+-
+-  private
+-    # Use callbacks to share common setup or constraints between actions.
+-    def set_part
+-      @part = Part.find(params[:id])
+-    end
+-
+-    # Never trust parameters from the scary internet, only allow the white list through.
+-    def part_params
+-      params.require(:part).permit(:name)
+-    end
+-end
+diff --git a/CarShop/app/helpers/cars_helper.rb b/CarShop/app/helpers/cars_helper.rb
+deleted file mode 100644
+index c410fa3..0000000
+--- a/CarShop/app/helpers/cars_helper.rb
++++ /dev/null
+@@ -1,2 +0,0 @@
+-module CarsHelper
+-end
+diff --git a/CarShop/app/helpers/makes_helper.rb b/CarShop/app/helpers/makes_helper.rb
+deleted file mode 100644
+index 94c3d99..0000000
+--- a/CarShop/app/helpers/makes_helper.rb
++++ /dev/null
+@@ -1,2 +0,0 @@
+-module MakesHelper
+-end
+diff --git a/CarShop/app/helpers/parts_helper.rb b/CarShop/app/helpers/parts_helper.rb
+deleted file mode 100644
+index 742ac82..0000000
+--- a/CarShop/app/helpers/parts_helper.rb
++++ /dev/null
+@@ -1,2 +0,0 @@
+-module PartsHelper
+-end
+diff --git a/CarShop/app/models/car.rb b/CarShop/app/models/car.rb
+deleted file mode 100644
+index b636ddc..0000000
+--- a/CarShop/app/models/car.rb
++++ /dev/null
+@@ -1,4 +0,0 @@
+-class Car < ApplicationRecord
+-  belongs_to :make
+-  has_and_belongs_to_many :parts
+-end
+diff --git a/CarShop/app/models/cars_parts.rb b/CarShop/app/models/cars_parts.rb
+deleted file mode 100644
+index 17667ab..0000000
+--- a/CarShop/app/models/cars_parts.rb
++++ /dev/null
+@@ -1,4 +0,0 @@
+-class CarsParts < ApplicationRecord
+-  belongs_to :car
+-  belongs_to :part
+-end
+diff --git a/CarShop/app/models/make.rb b/CarShop/app/models/make.rb
+deleted file mode 100644
+index b5d9750..0000000
+--- a/CarShop/app/models/make.rb
++++ /dev/null
+@@ -1,3 +0,0 @@
+-class Make < ApplicationRecord
+-  has_many :cars
+-end
+diff --git a/CarShop/app/models/part.rb b/CarShop/app/models/part.rb
+deleted file mode 100644
+index 72dc3f4..0000000
+--- a/CarShop/app/models/part.rb
++++ /dev/null
+@@ -1,3 +0,0 @@
+-class Part < ApplicationRecord
+-  has_and_belongs_to_many :cars
+-end
+diff --git a/CarShop/app/views/cars/_car.json.jbuilder b/CarShop/app/views/cars/_car.json.jbuilder
+deleted file mode 100644
+index ca7d9b5..0000000
+--- a/CarShop/app/views/cars/_car.json.jbuilder
++++ /dev/null
+@@ -1,2 +0,0 @@
+-json.extract! car, :id, :make_id, :model, :vin, :part_id, :created_at, :updated_at
+-json.url car_url(car, format: :json)
+diff --git a/CarShop/app/views/cars/_form.html.erb b/CarShop/app/views/cars/_form.html.erb
+deleted file mode 100644
+index d538258..0000000
+--- a/CarShop/app/views/cars/_form.html.erb
++++ /dev/null
+@@ -1,37 +0,0 @@
+-<%= form_with(model: car, local: true) do |form| %>
+-  <% if car.errors.any? %>
+-    <div id="error_explanation">
+-      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+-
+-      <ul>
+-      <% car.errors.full_messages.each do |message| %>
+-        <li><%= message %></li>
+-      <% end %>
+-      </ul>
+-    </div>
+-  <% end %>
+-
+-  <div class="field">
+-    <%= form.label :make_id %>
+-    <%= form.collection_select :make_id, @makes, :id, :name %>
+-  </div>
+-
+-  <div class="field">
+-    <%= form.label :model %>
+-    <%= form.text_field :model %>
+-  </div>
+-
+-  <div class="field">
+-    <%= form.label :vin %>
+-    <%= form.number_field :vin %>
+-  </div>
+-
+-  <div class="field">
+-    <%= form.label :part_id %>
+-    <%= form.collection_check_boxes :part_ids, @parts, :id, :name %>
+-  </div>
+-
+-  <div class="actions">
+-    <%= form.submit %>
+-  </div>
+-<% end %>
+diff --git a/CarShop/app/views/cars/edit.html.erb b/CarShop/app/views/cars/edit.html.erb
+deleted file mode 100644
+index 2a4d04f..0000000
+--- a/CarShop/app/views/cars/edit.html.erb
++++ /dev/null
+@@ -1,6 +0,0 @@
+-<h1>Editing Car</h1>
+-
+-<%= render 'form', car: @car %>
+-
+-<%= link_to 'Show', @car %> |
+-<%= link_to 'Back', cars_path %>
+diff --git a/CarShop/app/views/cars/index.html.erb b/CarShop/app/views/cars/index.html.erb
+deleted file mode 100644
+index 0507232..0000000
+--- a/CarShop/app/views/cars/index.html.erb
++++ /dev/null
+@@ -1,37 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<h1>Cars</h1>
+-
+-<table>
+-  <thead>
+-    <tr>
+-      <th>Make</th>
+-      <th>Model</th>
+-      <th>Vin</th>
+-      <th>Part</th>
+-      <th colspan="3"></th>
+-    </tr>
+-  </thead>
+-
+-  <tbody>
+-    <% @cars.each do |car| %>
+-      <tr>
+-        <td><%= car.make.name %></td>
+-        <td><%= car.model %></td>
+-        <td><%= car.vin %></td>
+-            <%  l = car.parts.map {|p| p.name} %>
+-        <td><%= l.join(", ") %></td>
+-        <td><%= link_to 'Show', car %></td>
+-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
+-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-      </tr>
+-    <% end %>
+-  </tbody>
+-</table>
+-
+-<br>
+-
+-<%= link_to 'New Car', new_car_path %>
+-<br><br>
+-<%= link_to 'Makes', makes_path %>
+-<%= link_to 'Parts', parts_path %>
+diff --git a/CarShop/app/views/cars/index.json.jbuilder b/CarShop/app/views/cars/index.json.jbuilder
+deleted file mode 100644
+index c76067c..0000000
+--- a/CarShop/app/views/cars/index.json.jbuilder
++++ /dev/null
+@@ -1 +0,0 @@
+-json.array! @cars, partial: "cars/car", as: :car
+diff --git a/CarShop/app/views/cars/new.html.erb b/CarShop/app/views/cars/new.html.erb
+deleted file mode 100644
+index f07fce0..0000000
+--- a/CarShop/app/views/cars/new.html.erb
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<h1>New Car</h1>
+-
+-<%= render 'form', car: @car %>
+-
+-<%= link_to 'Back', cars_path %>
+diff --git a/CarShop/app/views/cars/show.html.erb b/CarShop/app/views/cars/show.html.erb
+deleted file mode 100644
+index 590b051..0000000
+--- a/CarShop/app/views/cars/show.html.erb
++++ /dev/null
+@@ -1,28 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<p>
+-  <strong>Make:</strong>
+-  <%= @car.make.name %>
+-</p>
+-
+-<p>
+-  <strong>Model:</strong>
+-  <%= @car.model %>
+-</p>
+-
+-<p>
+-  <strong>Vin:</strong>
+-  <%= @car.vin %>
+-</p>
+-
+-<p>
+-  <strong>Part:</strong>
+-  <ul>
+-    <% @car.parts.each do |part| %>
+-      <li><%= part.name %></li>
+-    <% end %>
+-  </ul>
+-</p>
+-
+-<%= link_to 'Edit', edit_car_path(@car) %> |
+-<%= link_to 'Back', cars_path %>
+diff --git a/CarShop/app/views/cars/show.json.jbuilder b/CarShop/app/views/cars/show.json.jbuilder
+deleted file mode 100644
+index 01e8ce8..0000000
+--- a/CarShop/app/views/cars/show.json.jbuilder
++++ /dev/null
+@@ -1 +0,0 @@
+-json.partial! "cars/car", car: @car
+diff --git a/CarShop/app/views/makes/_form.html.erb b/CarShop/app/views/makes/_form.html.erb
+deleted file mode 100644
+index de13d04..0000000
+--- a/CarShop/app/views/makes/_form.html.erb
++++ /dev/null
+@@ -1,27 +0,0 @@
+-<%= form_with(model: make, local: true) do |form| %>
+-  <% if make.errors.any? %>
+-    <div id="error_explanation">
+-      <h2><%= pluralize(make.errors.count, "error") %> prohibited this make from being saved:</h2>
+-
+-      <ul>
+-      <% make.errors.full_messages.each do |message| %>
+-        <li><%= message %></li>
+-      <% end %>
+-      </ul>
+-    </div>
+-  <% end %>
+-
+-  <div class="field">
+-    <%= form.label :name %>
+-    <%= form.text_field :name %>
+-  </div>
+-
+-  <div class="field">
+-    <%= form.label :country %>
+-    <%= form.text_field :country %>
+-  </div>
+-
+-  <div class="actions">
+-    <%= form.submit %>
+-  </div>
+-<% end %>
+diff --git a/CarShop/app/views/makes/_make.json.jbuilder b/CarShop/app/views/makes/_make.json.jbuilder
+deleted file mode 100644
+index 9f396ae..0000000
+--- a/CarShop/app/views/makes/_make.json.jbuilder
++++ /dev/null
+@@ -1,2 +0,0 @@
+-json.extract! make, :id, :name, :country, :created_at, :updated_at
+-json.url make_url(make, format: :json)
+diff --git a/CarShop/app/views/makes/edit.html.erb b/CarShop/app/views/makes/edit.html.erb
+deleted file mode 100644
+index 17b5dcf..0000000
+--- a/CarShop/app/views/makes/edit.html.erb
++++ /dev/null
+@@ -1,6 +0,0 @@
+-<h1>Editing Make</h1>
+-
+-<%= render 'form', make: @make %>
+-
+-<%= link_to 'Show', @make %> |
+-<%= link_to 'Back', makes_path %>
+diff --git a/CarShop/app/views/makes/index.html.erb b/CarShop/app/views/makes/index.html.erb
+deleted file mode 100644
+index d32c90f..0000000
+--- a/CarShop/app/views/makes/index.html.erb
++++ /dev/null
+@@ -1,32 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<h1>Makes</h1>
+-
+-<table>
+-  <thead>
+-    <tr>
+-      <th>Name</th>
+-      <th>Country</th>
+-      <th colspan="3"></th>
+-    </tr>
+-  </thead>
+-
+-  <tbody>
+-    <% @makes.each do |make| %>
+-      <tr>
+-        <td><%= make.name %></td>
+-        <td><%= make.country %></td>
+-        <td><%= link_to 'Show', make %></td>
+-        <td><%= link_to 'Edit', edit_make_path(make) %></td>
+-        <td><%= link_to 'Destroy', make, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-      </tr>
+-    <% end %>
+-  </tbody>
+-</table>
+-
+-<br>
+-
+-<%= link_to 'New Make', new_make_path %>
+-<br><br>
+-<%= link_to 'Cars', cars_path %>
+-<%= link_to 'Parts', parts_path %>
+diff --git a/CarShop/app/views/makes/index.json.jbuilder b/CarShop/app/views/makes/index.json.jbuilder
+deleted file mode 100644
+index d8079f8..0000000
+--- a/CarShop/app/views/makes/index.json.jbuilder
++++ /dev/null
+@@ -1 +0,0 @@
+-json.array! @makes, partial: "makes/make", as: :make
+diff --git a/CarShop/app/views/makes/new.html.erb b/CarShop/app/views/makes/new.html.erb
+deleted file mode 100644
+index acc6f3b..0000000
+--- a/CarShop/app/views/makes/new.html.erb
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<h1>New Make</h1>
+-
+-<%= render 'form', make: @make %>
+-
+-<%= link_to 'Back', makes_path %>
+diff --git a/CarShop/app/views/makes/show.html.erb b/CarShop/app/views/makes/show.html.erb
+deleted file mode 100644
+index f02d66d..0000000
+--- a/CarShop/app/views/makes/show.html.erb
++++ /dev/null
+@@ -1,14 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<p>
+-  <strong>Name:</strong>
+-  <%= @make.name %>
+-</p>
+-
+-<p>
+-  <strong>Country:</strong>
+-  <%= @make.country %>
+-</p>
+-
+-<%= link_to 'Edit', edit_make_path(@make) %> |
+-<%= link_to 'Back', makes_path %>
+diff --git a/CarShop/app/views/makes/show.json.jbuilder b/CarShop/app/views/makes/show.json.jbuilder
+deleted file mode 100644
+index 06fed17..0000000
+--- a/CarShop/app/views/makes/show.json.jbuilder
++++ /dev/null
+@@ -1 +0,0 @@
+-json.partial! "makes/make", make: @make
+diff --git a/CarShop/app/views/parts/_form.html.erb b/CarShop/app/views/parts/_form.html.erb
+deleted file mode 100644
+index 6cd8700..0000000
+--- a/CarShop/app/views/parts/_form.html.erb
++++ /dev/null
+@@ -1,22 +0,0 @@
+-<%= form_with(model: part, local: true) do |form| %>
+-  <% if part.errors.any? %>
+-    <div id="error_explanation">
+-      <h2><%= pluralize(part.errors.count, "error") %> prohibited this part from being saved:</h2>
+-
+-      <ul>
+-      <% part.errors.full_messages.each do |message| %>
+-        <li><%= message %></li>
+-      <% end %>
+-      </ul>
+-    </div>
+-  <% end %>
+-
+-  <div class="field">
+-    <%= form.label :name %>
+-    <%= form.text_field :name %>
+-  </div>
+-
+-  <div class="actions">
+-    <%= form.submit %>
+-  </div>
+-<% end %>
+diff --git a/CarShop/app/views/parts/_part.json.jbuilder b/CarShop/app/views/parts/_part.json.jbuilder
+deleted file mode 100644
+index 4ca9fce..0000000
+--- a/CarShop/app/views/parts/_part.json.jbuilder
++++ /dev/null
+@@ -1,2 +0,0 @@
+-json.extract! part, :id, :name, :created_at, :updated_at
+-json.url part_url(part, format: :json)
+diff --git a/CarShop/app/views/parts/edit.html.erb b/CarShop/app/views/parts/edit.html.erb
+deleted file mode 100644
+index b88c790..0000000
+--- a/CarShop/app/views/parts/edit.html.erb
++++ /dev/null
+@@ -1,6 +0,0 @@
+-<h1>Editing Part</h1>
+-
+-<%= render 'form', part: @part %>
+-
+-<%= link_to 'Show', @part %> |
+-<%= link_to 'Back', parts_path %>
+diff --git a/CarShop/app/views/parts/index.html.erb b/CarShop/app/views/parts/index.html.erb
+deleted file mode 100644
+index 05802fb..0000000
+--- a/CarShop/app/views/parts/index.html.erb
++++ /dev/null
+@@ -1,30 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<h1>Parts</h1>
+-
+-<table>
+-  <thead>
+-    <tr>
+-      <th>Name</th>
+-      <th colspan="3"></th>
+-    </tr>
+-  </thead>
+-
+-  <tbody>
+-    <% @parts.each do |part| %>
+-      <tr>
+-        <td><%= part.name %></td>
+-        <td><%= link_to 'Show', part %></td>
+-        <td><%= link_to 'Edit', edit_part_path(part) %></td>
+-        <td><%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-      </tr>
+-    <% end %>
+-  </tbody>
+-</table>
+-
+-<br>
+-
+-<%= link_to 'New Part', new_part_path %>
+-<br><br>
+-<%= link_to 'Makes', makes_path %>
+-<%= link_to 'Cars', cars_path %>
+diff --git a/CarShop/app/views/parts/index.json.jbuilder b/CarShop/app/views/parts/index.json.jbuilder
+deleted file mode 100644
+index bfeedbf..0000000
+--- a/CarShop/app/views/parts/index.json.jbuilder
++++ /dev/null
+@@ -1 +0,0 @@
+-json.array! @parts, partial: "parts/part", as: :part
+diff --git a/CarShop/app/views/parts/new.html.erb b/CarShop/app/views/parts/new.html.erb
+deleted file mode 100644
+index 0db5be7..0000000
+--- a/CarShop/app/views/parts/new.html.erb
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<h1>New Part</h1>
+-
+-<%= render 'form', part: @part %>
+-
+-<%= link_to 'Back', parts_path %>
+diff --git a/CarShop/app/views/parts/show.html.erb b/CarShop/app/views/parts/show.html.erb
+deleted file mode 100644
+index d58da0d..0000000
+--- a/CarShop/app/views/parts/show.html.erb
++++ /dev/null
+@@ -1,9 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<p>
+-  <strong>Name:</strong>
+-  <%= @part.name %>
+-</p>
+-
+-<%= link_to 'Edit', edit_part_path(@part) %> |
+-<%= link_to 'Back', parts_path %>
+diff --git a/CarShop/app/views/parts/show.json.jbuilder b/CarShop/app/views/parts/show.json.jbuilder
+deleted file mode 100644
+index 5815f2b..0000000
+--- a/CarShop/app/views/parts/show.json.jbuilder
++++ /dev/null
+@@ -1 +0,0 @@
+-json.partial! "parts/part", part: @part
+diff --git a/CarShop/config/routes.rb b/CarShop/config/routes.rb
+index 4a2466b..787824f 100644
+--- a/CarShop/config/routes.rb
++++ b/CarShop/config/routes.rb
+@@ -1,6 +1,3 @@
+ Rails.application.routes.draw do
+-  resources :makes
+-  resources :parts
+-  resources :cars
+   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ end
+diff --git a/CarShop/db/migrate/20190917205044_create_cars.rb b/CarShop/db/migrate/20190917205044_create_cars.rb
+deleted file mode 100644
+index 24f80b7..0000000
+--- a/CarShop/db/migrate/20190917205044_create_cars.rb
++++ /dev/null
+@@ -1,12 +0,0 @@
+-class CreateCars < ActiveRecord::Migration[5.2]
+-  def change
+-    create_table :cars do |t|
+-      t.references :make, foreign_key: true
+-      t.string :model
+-      t.integer :vin
+-      t.references :part, foreign_key: true
+-
+-      t.timestamps
+-    end
+-  end
+-end
+diff --git a/CarShop/db/migrate/20190917205155_create_parts.rb b/CarShop/db/migrate/20190917205155_create_parts.rb
+deleted file mode 100644
+index 0239cb0..0000000
+--- a/CarShop/db/migrate/20190917205155_create_parts.rb
++++ /dev/null
+@@ -1,9 +0,0 @@
+-class CreateParts < ActiveRecord::Migration[5.2]
+-  def change
+-    create_table :parts do |t|
+-      t.string :name
+-
+-      t.timestamps
+-    end
+-  end
+-end
+diff --git a/CarShop/db/migrate/20190917205244_create_makes.rb b/CarShop/db/migrate/20190917205244_create_makes.rb
+deleted file mode 100644
+index b9cf060..0000000
+--- a/CarShop/db/migrate/20190917205244_create_makes.rb
++++ /dev/null
+@@ -1,10 +0,0 @@
+-class CreateMakes < ActiveRecord::Migration[5.2]
+-  def change
+-    create_table :makes do |t|
+-      t.string :name
+-      t.string :country
+-
+-      t.timestamps
+-    end
+-  end
+-end
+diff --git a/CarShop/db/migrate/20190917205311_create_cars_parts.rb b/CarShop/db/migrate/20190917205311_create_cars_parts.rb
+deleted file mode 100644
+index c0f3483..0000000
+--- a/CarShop/db/migrate/20190917205311_create_cars_parts.rb
++++ /dev/null
+@@ -1,10 +0,0 @@
+-class CreateCarsParts < ActiveRecord::Migration[5.2]
+-  def change
+-    create_table :cars_parts do |t|
+-      t.references :car, foreign_key: true
+-      t.references :part, foreign_key: true
+-
+-      t.timestamps
+-    end
+-  end
+-end
+diff --git a/CarShop/db/schema.rb b/CarShop/db/schema.rb
+deleted file mode 100644
+index a2cd448..0000000
+--- a/CarShop/db/schema.rb
++++ /dev/null
+@@ -1,48 +0,0 @@
+-# This file is auto-generated from the current state of the database. Instead
+-# of editing this file, please use the migrations feature of Active Record to
+-# incrementally modify your database, and then regenerate this schema definition.
+-#
+-# Note that this schema.rb definition is the authoritative source for your
+-# database schema. If you need to create the application database on another
+-# system, you should be using db:schema:load, not running all the migrations
+-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+-# you'll amass, the slower it'll run and the greater likelihood for issues).
+-#
+-# It's strongly recommended that you check this file into your version control system.
+-
+-ActiveRecord::Schema.define(version: 2019_09_17_205311) do
+-
+-  create_table "cars", force: :cascade do |t|
+-    t.integer "make_id"
+-    t.string "model"
+-    t.integer "vin"
+-    t.integer "part_id"
+-    t.datetime "created_at", null: false
+-    t.datetime "updated_at", null: false
+-    t.index ["make_id"], name: "index_cars_on_make_id"
+-    t.index ["part_id"], name: "index_cars_on_part_id"
+-  end
+-
+-  create_table "cars_parts", force: :cascade do |t|
+-    t.integer "car_id"
+-    t.integer "part_id"
+-    t.datetime "created_at", null: false
+-    t.datetime "updated_at", null: false
+-    t.index ["car_id"], name: "index_cars_parts_on_car_id"
+-    t.index ["part_id"], name: "index_cars_parts_on_part_id"
+-  end
+-
+-  create_table "makes", force: :cascade do |t|
+-    t.string "name"
+-    t.string "country"
+-    t.datetime "created_at", null: false
+-    t.datetime "updated_at", null: false
+-  end
+-
+-  create_table "parts", force: :cascade do |t|
+-    t.string "name"
+-    t.datetime "created_at", null: false
+-    t.datetime "updated_at", null: false
+-  end
+-
+-end
+diff --git a/CarShop/test/controllers/cars_controller_test.rb b/CarShop/test/controllers/cars_controller_test.rb
+deleted file mode 100644
+index fd57098..0000000
+--- a/CarShop/test/controllers/cars_controller_test.rb
++++ /dev/null
+@@ -1,48 +0,0 @@
+-require 'test_helper'
+-
+-class CarsControllerTest < ActionDispatch::IntegrationTest
+-  setup do
+-    @car = cars(:one)
+-  end
+-
+-  test "should get index" do
+-    get cars_url
+-    assert_response :success
+-  end
+-
+-  test "should get new" do
+-    get new_car_url
+-    assert_response :success
+-  end
+-
+-  test "should create car" do
+-    assert_difference('Car.count') do
+-      post cars_url, params: { car: { make_id: @car.make_id, model: @car.model, part_id: @car.part_id, vin: @car.vin } }
+-    end
+-
+-    assert_redirected_to car_url(Car.last)
+-  end
+-
+-  test "should show car" do
+-    get car_url(@car)
+-    assert_response :success
+-  end
+-
+-  test "should get edit" do
+-    get edit_car_url(@car)
+-    assert_response :success
+-  end
+-
+-  test "should update car" do
+-    patch car_url(@car), params: { car: { make_id: @car.make_id, model: @car.model, part_id: @car.part_id, vin: @car.vin } }
+-    assert_redirected_to car_url(@car)
+-  end
+-
+-  test "should destroy car" do
+-    assert_difference('Car.count', -1) do
+-      delete car_url(@car)
+-    end
+-
+-    assert_redirected_to cars_url
+-  end
+-end
+diff --git a/CarShop/test/controllers/makes_controller_test.rb b/CarShop/test/controllers/makes_controller_test.rb
+deleted file mode 100644
+index 52dfd39..0000000
+--- a/CarShop/test/controllers/makes_controller_test.rb
++++ /dev/null
+@@ -1,48 +0,0 @@
+-require 'test_helper'
+-
+-class MakesControllerTest < ActionDispatch::IntegrationTest
+-  setup do
+-    @make = makes(:one)
+-  end
+-
+-  test "should get index" do
+-    get makes_url
+-    assert_response :success
+-  end
+-
+-  test "should get new" do
+-    get new_make_url
+-    assert_response :success
+-  end
+-
+-  test "should create make" do
+-    assert_difference('Make.count') do
+-      post makes_url, params: { make: { country: @make.country, name: @make.name } }
+-    end
+-
+-    assert_redirected_to make_url(Make.last)
+-  end
+-
+-  test "should show make" do
+-    get make_url(@make)
+-    assert_response :success
+-  end
+-
+-  test "should get edit" do
+-    get edit_make_url(@make)
+-    assert_response :success
+-  end
+-
+-  test "should update make" do
+-    patch make_url(@make), params: { make: { country: @make.country, name: @make.name } }
+-    assert_redirected_to make_url(@make)
+-  end
+-
+-  test "should destroy make" do
+-    assert_difference('Make.count', -1) do
+-      delete make_url(@make)
+-    end
+-
+-    assert_redirected_to makes_url
+-  end
+-end
+diff --git a/CarShop/test/controllers/parts_controller_test.rb b/CarShop/test/controllers/parts_controller_test.rb
+deleted file mode 100644
+index 0191216..0000000
+--- a/CarShop/test/controllers/parts_controller_test.rb
++++ /dev/null
+@@ -1,48 +0,0 @@
+-require 'test_helper'
+-
+-class PartsControllerTest < ActionDispatch::IntegrationTest
+-  setup do
+-    @part = parts(:one)
+-  end
+-
+-  test "should get index" do
+-    get parts_url
+-    assert_response :success
+-  end
+-
+-  test "should get new" do
+-    get new_part_url
+-    assert_response :success
+-  end
+-
+-  test "should create part" do
+-    assert_difference('Part.count') do
+-      post parts_url, params: { part: { name: @part.name } }
+-    end
+-
+-    assert_redirected_to part_url(Part.last)
+-  end
+-
+-  test "should show part" do
+-    get part_url(@part)
+-    assert_response :success
+-  end
+-
+-  test "should get edit" do
+-    get edit_part_url(@part)
+-    assert_response :success
+-  end
+-
+-  test "should update part" do
+-    patch part_url(@part), params: { part: { name: @part.name } }
+-    assert_redirected_to part_url(@part)
+-  end
+-
+-  test "should destroy part" do
+-    assert_difference('Part.count', -1) do
+-      delete part_url(@part)
+-    end
+-
+-    assert_redirected_to parts_url
+-  end
+-end
+diff --git a/CarShop/test/fixtures/cars.yml b/CarShop/test/fixtures/cars.yml
+deleted file mode 100644
+index 2d5f52a..0000000
+--- a/CarShop/test/fixtures/cars.yml
++++ /dev/null
+@@ -1,13 +0,0 @@
+-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+-
+-one:
+-  make: one
+-  model: MyString
+-  vin: 1
+-  part: one
+-
+-two:
+-  make: two
+-  model: MyString
+-  vin: 1
+-  part: two
+diff --git a/CarShop/test/fixtures/cars_parts.yml b/CarShop/test/fixtures/cars_parts.yml
+deleted file mode 100644
+index 51418dc..0000000
+--- a/CarShop/test/fixtures/cars_parts.yml
++++ /dev/null
+@@ -1,9 +0,0 @@
+-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+-
+-one:
+-  car: one
+-  part: one
+-
+-two:
+-  car: two
+-  part: two
+diff --git a/CarShop/test/fixtures/makes.yml b/CarShop/test/fixtures/makes.yml
+deleted file mode 100644
+index d8d63f7..0000000
+--- a/CarShop/test/fixtures/makes.yml
++++ /dev/null
+@@ -1,9 +0,0 @@
+-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+-
+-one:
+-  name: MyString
+-  country: MyString
+-
+-two:
+-  name: MyString
+-  country: MyString
+diff --git a/CarShop/test/fixtures/parts.yml b/CarShop/test/fixtures/parts.yml
+deleted file mode 100644
+index 56066c6..0000000
+--- a/CarShop/test/fixtures/parts.yml
++++ /dev/null
+@@ -1,7 +0,0 @@
+-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+-
+-one:
+-  name: MyString
+-
+-two:
+-  name: MyString
+diff --git a/CarShop/test/models/car_test.rb b/CarShop/test/models/car_test.rb
+deleted file mode 100644
+index 39bdaec..0000000
+--- a/CarShop/test/models/car_test.rb
++++ /dev/null
+@@ -1,7 +0,0 @@
+-require 'test_helper'
+-
+-class CarTest < ActiveSupport::TestCase
+-  # test "the truth" do
+-  #   assert true
+-  # end
+-end
+diff --git a/CarShop/test/models/cars_parts_test.rb b/CarShop/test/models/cars_parts_test.rb
+deleted file mode 100644
+index 34c6849..0000000
+--- a/CarShop/test/models/cars_parts_test.rb
++++ /dev/null
+@@ -1,7 +0,0 @@
+-require 'test_helper'
+-
+-class CarsPartsTest < ActiveSupport::TestCase
+-  # test "the truth" do
+-  #   assert true
+-  # end
+-end
+diff --git a/CarShop/test/models/make_test.rb b/CarShop/test/models/make_test.rb
+deleted file mode 100644
+index 8162f47..0000000
+--- a/CarShop/test/models/make_test.rb
++++ /dev/null
+@@ -1,7 +0,0 @@
+-require 'test_helper'
+-
+-class MakeTest < ActiveSupport::TestCase
+-  # test "the truth" do
+-  #   assert true
+-  # end
+-end
+diff --git a/CarShop/test/models/part_test.rb b/CarShop/test/models/part_test.rb
+deleted file mode 100644
+index bba3103..0000000
+--- a/CarShop/test/models/part_test.rb
++++ /dev/null
+@@ -1,7 +0,0 @@
+-require 'test_helper'
+-
+-class PartTest < ActiveSupport::TestCase
+-  # test "the truth" do
+-  #   assert true
+-  # end
+-end
+diff --git a/CarShop/test/system/cars_test.rb b/CarShop/test/system/cars_test.rb
+deleted file mode 100644
+index d0c7e70..0000000
+--- a/CarShop/test/system/cars_test.rb
++++ /dev/null
+@@ -1,49 +0,0 @@
+-require "application_system_test_case"
+-
+-class CarsTest < ApplicationSystemTestCase
+-  setup do
+-    @car = cars(:one)
+-  end
+-
+-  test "visiting the index" do
+-    visit cars_url
+-    assert_selector "h1", text: "Cars"
+-  end
+-
+-  test "creating a Car" do
+-    visit cars_url
+-    click_on "New Car"
+-
+-    fill_in "Make", with: @car.make_id
+-    fill_in "Model", with: @car.model
+-    fill_in "Part", with: @car.part_id
+-    fill_in "Vin", with: @car.vin
+-    click_on "Create Car"
+-
+-    assert_text "Car was successfully created"
+-    click_on "Back"
+-  end
+-
+-  test "updating a Car" do
+-    visit cars_url
+-    click_on "Edit", match: :first
+-
+-    fill_in "Make", with: @car.make_id
+-    fill_in "Model", with: @car.model
+-    fill_in "Part", with: @car.part_id
+-    fill_in "Vin", with: @car.vin
+-    click_on "Update Car"
+-
+-    assert_text "Car was successfully updated"
+-    click_on "Back"
+-  end
+-
+-  test "destroying a Car" do
+-    visit cars_url
+-    page.accept_confirm do
+-      click_on "Destroy", match: :first
+-    end
+-
+-    assert_text "Car was successfully destroyed"
+-  end
+-end
+diff --git a/CarShop/test/system/makes_test.rb b/CarShop/test/system/makes_test.rb
+deleted file mode 100644
+index 5751726..0000000
+--- a/CarShop/test/system/makes_test.rb
++++ /dev/null
+@@ -1,45 +0,0 @@
+-require "application_system_test_case"
+-
+-class MakesTest < ApplicationSystemTestCase
+-  setup do
+-    @make = makes(:one)
+-  end
+-
+-  test "visiting the index" do
+-    visit makes_url
+-    assert_selector "h1", text: "Makes"
+-  end
+-
+-  test "creating a Make" do
+-    visit makes_url
+-    click_on "New Make"
+-
+-    fill_in "Country", with: @make.country
+-    fill_in "Name", with: @make.name
+-    click_on "Create Make"
+-
+-    assert_text "Make was successfully created"
+-    click_on "Back"
+-  end
+-
+-  test "updating a Make" do
+-    visit makes_url
+-    click_on "Edit", match: :first
+-
+-    fill_in "Country", with: @make.country
+-    fill_in "Name", with: @make.name
+-    click_on "Update Make"
+-
+-    assert_text "Make was successfully updated"
+-    click_on "Back"
+-  end
+-
+-  test "destroying a Make" do
+-    visit makes_url
+-    page.accept_confirm do
+-      click_on "Destroy", match: :first
+-    end
+-
+-    assert_text "Make was successfully destroyed"
+-  end
+-end
+diff --git a/CarShop/test/system/parts_test.rb b/CarShop/test/system/parts_test.rb
+deleted file mode 100644
+index 7bdf358..0000000
+--- a/CarShop/test/system/parts_test.rb
++++ /dev/null
+@@ -1,43 +0,0 @@
+-require "application_system_test_case"
+-
+-class PartsTest < ApplicationSystemTestCase
+-  setup do
+-    @part = parts(:one)
+-  end
+-
+-  test "visiting the index" do
+-    visit parts_url
+-    assert_selector "h1", text: "Parts"
+-  end
+-
+-  test "creating a Part" do
+-    visit parts_url
+-    click_on "New Part"
+-
+-    fill_in "Name", with: @part.name
+-    click_on "Create Part"
+-
+-    assert_text "Part was successfully created"
+-    click_on "Back"
+-  end
+-
+-  test "updating a Part" do
+-    visit parts_url
+-    click_on "Edit", match: :first
+-
+-    fill_in "Name", with: @part.name
+-    click_on "Update Part"
+-
+-    assert_text "Part was successfully updated"
+-    click_on "Back"
+-  end
+-
+-  test "destroying a Part" do
+-    visit parts_url
+-    page.accept_confirm do
+-      click_on "Destroy", match: :first
+-    end
+-
+-    assert_text "Part was successfully destroyed"
+-  end
+-end
