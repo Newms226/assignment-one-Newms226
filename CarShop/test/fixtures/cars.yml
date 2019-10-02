@@ -3,17 +3,18 @@
 one:
   make: one
   model: MyString
-  vin: 1
+  vin: 4
   part_id: one
 
 two:
   make: two
   model: MyString
-  vin: 1
+  vin: 2
   part_id: two
 
 my_car:
   make:  Audi
   model: Q5
   vin:   123
-  part_id: wheel
+  part_id:
+    - wheel

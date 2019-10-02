@@ -2,7 +2,8 @@ require 'test_helper'
 
 class CarsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @car = cars(:my_car)
+    @car = cars(:one)
+    @update = cars(:my_car)
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create car" do
     assert_difference('Car.count') do
-      post cars_url, params: { car: { make_id: @car.make_id, model: @car.model, part_id: @car.part_id, vin: @car.vin } }
+      post cars_url, params: { car: @update }
     end
 
     assert_redirected_to car_url(Car.last)

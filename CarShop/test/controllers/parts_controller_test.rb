@@ -3,6 +3,7 @@ require 'test_helper'
 class PartsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @part = parts(:one)
+
   end
 
   test "should get index" do
