@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 class Car < ApplicationRecord
   belongs_to :make
